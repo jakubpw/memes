@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= message
+  img(id="header-img" src="/images/mem.png")
+  h1="Meme list"
+  ul(class="meme-list")
+    each meme in memes
+      li
+        a(href="meme/" + meme.id) #{meme.name}
+        p Price: #{meme.price}
+        img(src=meme.url)

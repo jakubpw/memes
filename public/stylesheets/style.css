@@ -1,0 +1,72 @@
+body {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+img {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  border: solid grey 2px;
+}
+
+.meme-list img {
+  width: 100%;
+  margin-bottom: 20px;
+  border: solid grey 2px;
+}
+
+p {
+  margin: 0px;
+}
+
+.meme-list {
+  list-style-type: none;
+  width: 90%;
+  max-width: 500px;
+}
+
+#change-price {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#price-history-table,
+#price-history-table th,
+#price-history-table td {
+  border-collapse: collapse;
+  border: gray solid 2px;
+}
+
+#price-history-table {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+#price-history-table th {
+  font-style: italic;
+  font-weight: bold;
+  background-color: lightgray;
+}
+
+#back {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
