@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sqlite3 = require('sqlite3').verbose()
 var session = require('express-session');
-
+var sqliteStore = require('connect-sqlite3')(session);
 var indexRouter = require('./routes/index');
 var memeRouter = require('./routes/meme');
 
@@ -49,6 +49,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
+  store: new sqliteStore,
   resave: true,
   saveUninitialized: false,
   secret: 'sAn7baRbhx4',
