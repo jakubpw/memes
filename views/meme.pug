@@ -1,21 +1,25 @@
 extends layout
 
 block content
-    h1 #{meme.name}
-    img(src=meme.url)
-    p Current price: #{meme.price}
+  h1 #{meme.name}
+  img(src=meme.url)
+  p Current price: #{meme.price}
+  if user
+    p Welcome #{user} 
     form(id="change-price" method="post")
-      input(type="hidden", name="_csrf", value=csrfToken)
+      input(type="hidden" name="_csrf", value=csrfToken)
       label(for="price") Set new price: 
       input(name="price" type="number" min="0" required="required")
       input(type="submit" value="SET")
-    h2 Price history
-    table(id="price-history-table")
+  else
+    p To change price login first.
+  h2 Price history
+  table(id="price-history-table")
+    tr
+      th DATE
+      th PRICE
+    each price in prices
       tr
-        th DATE
-        th PRICE
-      each price in prices
-        tr
-          td #{price.date}
-          td #{price.price}
-    a(id="back" href="/") BACK
+        td #{price.date}
+        td #{price.price}
+  a(id="back" href="/") BACK

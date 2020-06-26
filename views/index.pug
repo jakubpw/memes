@@ -1,6 +1,14 @@
 extends layout
 
 block content
+  if user
+    p Welcome #{user} in Memes 
+      a(href="logout") logout
+  else
+    p If you want to change prices login first.
+    form(method="post")
+      input(type="text" name="login")
+      input(type="submit" value="In")
   h1= message
   img(id="header-img" src="/images/mem.png")
   h1="Meme list"

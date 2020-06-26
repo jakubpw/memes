@@ -10,9 +10,20 @@ router.get('/', function (req, res, next) {
           title: 'Meme market',
           message: 'Hello there!',
           memes: rows,
-          views: req.session.views
+          views: req.session.views,
+          user: req.session.login
         });
     })
 });
 
+router.post('/', function (req, res, next) {
+  // TO JEST LOGOWANIE
+  req.session.login = req.body.login;
+  res.redirect('/');
+});
+
+router.get('/logout', function (req, res, next) {
+  delete (req.session.login);
+  res.redirect('/');
+});
 module.exports = router;
