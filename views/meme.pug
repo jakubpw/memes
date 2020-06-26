@@ -5,6 +5,7 @@ block content
     img(src=meme.url)
     p Current price: #{meme.price}
     form(id="change-price" method="post")
+      input(type="hidden", name="_csrf", value=csrfToken)
       label(for="price") Set new price: 
       input(name="price" type="number" min="0" required="required")
       input(type="submit" value="SET")
