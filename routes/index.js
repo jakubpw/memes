@@ -9,7 +9,8 @@ router.get('/', function (req, res, next) {
         {
           title: 'Meme market',
           message: 'Hello there!',
-          memes: rows
+          memes: rows,
+          views: req.session.views
         });
     })
 });
