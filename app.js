@@ -14,9 +14,6 @@ var app = express();
 // przygotowanie bazy danych
 var db = new sqlite3.Database(':memory:')
 db.serialize(function () {
-  db.run("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username varchar)");
-  db.run("INSERT INTO users (username) VALUES ('user_1')");
-  db.run("INSERT INTO users (username) VALUES ('user_2')");
   db.run("CREATE TABLE memes (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR (255) NOT NULL, url VARCHAR (255) NOt NULL)");
   db.run("CREATE TABLE prices (id INTEGER PRIMARY KEY AUTOINCREMENT, idmem INTEGER REFRENCES memes, price INTEGER, date DATETIME, expert VARCHAR (255))");
   db.run("INSERT INTO memes (name, url) VALUES ('Mem1', 'https://i.redd.it/h7rplf9jt8y21.png')");
